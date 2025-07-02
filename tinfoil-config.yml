@@ -9,6 +9,7 @@ shim:
   upstream-port: 11434
   control-plane: https://api.tinfoil.sh
   publish-attestation: true
+  tls-challenge: dns
   paths:
     - /v1/embeddings
   origins:
