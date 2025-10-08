@@ -16,7 +16,6 @@ containers:
       "--model", "nomic-ai/nomic-embed-text-v1",
       "--served-model-name", "nomic-embed-text",
       "--trust-remote-code",
-      "--gpu-memory-utilization", "0.95",
       "--port", "8001"
     ]
 
