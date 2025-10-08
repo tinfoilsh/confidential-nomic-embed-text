@@ -2,7 +2,7 @@ shim-version: v0.1.9@sha256:410510c9e8e4c7489dd201fede302dee8455075ca28f4f0abbf8
 cvm-version: 0.4.1
 ovmf-version: 0.0.2
 cpus: 8
-memory: 40960
+memory: 102400
 vllm: false
 
 containers:
