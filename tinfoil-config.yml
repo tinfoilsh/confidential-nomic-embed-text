@@ -13,10 +13,13 @@ containers:
       "--gpus", "all",
       "--ipc", "host",
       "vllm/vllm-openai:v0.11.0",
-      "--model", "nomic-ai/nomic-embed-text-v1",
+      "--model", "nomic-ai/nomic-embed-text-v1.5",
       "--served-model-name", "nomic-embed-text",
       "--trust-remote-code",
-      "--port", "8001"
+      "--port", "8001",
+      "--max-model-len", "8192",              
+      "--max-num-seqs", "256",                
+      "--max-num-batched-tokens", "65536", 
     ]
 
 shim:
