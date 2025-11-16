@@ -6,17 +6,19 @@ memory: 102400
 vllm: false
 
 containers:
-  - name: "nomic-embed-text"
+  - name: "nomic-embed-text-v1.5"
     image: ""
     args: [
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",
       "vllm/vllm-openai:v0.11.0",
-      "--model", "nomic-ai/nomic-embed-text-v1",
+      "--model", "nomic-ai/nomic-embed-text-v1.5",
       "--served-model-name", "nomic-embed-text",
       "--trust-remote-code",
-      "--port", "8001"
+      "--port", "8001",
+      "--max-model-len", "8192",
+      "--hf-overrides", '''{"max_position_embeddings":8192,"rope_theta":1000,"rope_scaling":{"type":"dynamic","factor":4.0}}'''
     ]
 
 shim:
@@ -28,4 +30,3 @@ shim:
   paths:
     - /v1/embeddings
     - /metrics
-
