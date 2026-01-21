@@ -11,6 +11,7 @@ containers:
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",
+      "-e", "VLLM_ALLOW_LONG_MAX_MODEL_LEN=1",
       "vllm/vllm-openai:v0.13.0@sha256:d623253f2ba246378421c9642e20885e65257f38418ff26d48c81aea1702521b",
       "--model", "nomic-ai/nomic-embed-text-v1.5",
       "--served-model-name", "nomic-embed-text",
