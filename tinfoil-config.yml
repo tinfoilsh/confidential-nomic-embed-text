@@ -1,5 +1,5 @@
-shim-version: v0.2.15@sha256:5ca748b384b78b7e686b57ca66d9b3c552038ebab2ce60305004f76e573a8458
-cvm-version: 0.5.8
+shim-version: v0.3.5@sha256:f44c65a1f7db476be20c3431bb6facea8c2966606a07fbb5724a619f82bfa558
+cvm-version: 0.5.17
 cpus: 16
 memory: 65536
 gpus: full
@@ -11,7 +11,7 @@ containers:
       "--runtime", "nvidia",
       "--gpus", "all",
       "--ipc", "host",
-      "vllm/vllm-openai:v0.11.0@sha256:014a95f21c9edf6abe0aea6b07353f96baa4ec291c427bb1176dc7c93a85845c",
+      "vllm/vllm-openai:v0.13.0@sha256:d623253f2ba246378421c9642e20885e65257f38418ff26d48c81aea1702521b",
       "--model", "nomic-ai/nomic-embed-text-v1.5",
       "--served-model-name", "nomic-embed-text",
       "--trust-remote-code",
@@ -23,9 +23,7 @@ containers:
 shim:
   listen-port: 443
   upstream-port: 8001
-  publish-attestation: true
-  tls-challenge: dns
-  control-plane: https://api.tinfoil.sh
+  authenticated: true
   paths:
     - /v1/embeddings
     - /metrics
