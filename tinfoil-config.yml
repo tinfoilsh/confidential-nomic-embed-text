@@ -1,7 +1,7 @@
-shim-version: v0.3.5@sha256:f44c65a1f7db476be20c3431bb6facea8c2966606a07fbb5724a619f82bfa558
-cvm-version: 0.5.17
+shim-version: v0.3.10@sha256:825cfafbc6dde8967ac60e44264f4686fcf2ed33fae112ab4b1c69c6673cdc8e
+cvm-version: 0.5.23
 cpus: 16
-memory: 65536
+memory: 131072
 gpus: full
 
 containers:
@@ -12,7 +12,7 @@ containers:
       "--gpus", "all",
       "--ipc", "host",
       "-e", "VLLM_ALLOW_LONG_MAX_MODEL_LEN=1",
-      "vllm/vllm-openai:v0.13.0@sha256:d623253f2ba246378421c9642e20885e65257f38418ff26d48c81aea1702521b",
+      "vllm/vllm-openai:v0.14.1-cu130@sha256:6fc52be4609fc19b09c163be2556976447cc844b8d0d817f19bc9e1f44b48d5a",
       "--model", "nomic-ai/nomic-embed-text-v1.5",
       "--served-model-name", "nomic-embed-text",
       "--trust-remote-code",
