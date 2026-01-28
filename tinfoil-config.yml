@@ -10,12 +10,14 @@ containers:
     args: [
       "--runtime", "nvidia",
       "--gpus", "all",
-      "-p", "8001:80",
       "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673",
       "--model-id", "nomic-ai/nomic-embed-text-v1.5",
       "--revision", "e5cf08aadaa33385f5990def41f7a23405aec398",
       "--served-model-name", "nomic-embed-text",
       "--max-client-batch-size", "64",
+      "--port", "8001",
+:wa
+:q
       "--auto-truncate"
     ]
 
