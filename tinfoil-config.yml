@@ -14,9 +14,7 @@ containers:
       "--model-id", "nomic-ai/nomic-embed-text-v1.5",
       "--revision", "e5cf08aadaa33385f5990def41f7a23405aec398",
       "--served-model-name", "nomic-embed-text",
-      "--max-client-batch-size", "64",
       "--port", "8001",
-      "--auto-truncate"
     ]
 
 shim:
