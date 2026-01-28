@@ -16,8 +16,6 @@ containers:
       "--served-model-name", "nomic-embed-text",
       "--max-client-batch-size", "64",
       "--port", "8001",
-:wa
-:q
       "--auto-truncate"
     ]
 
