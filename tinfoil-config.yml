@@ -1,25 +1,17 @@
 shim-version: v0.3.10@sha256:825cfafbc6dde8967ac60e44264f4686fcf2ed33fae112ab4b1c69c6673cdc8e
 cvm-version: 0.5.23
-cpus: 16
+cpus: 64
 memory: 131072
 gpus: full
 
-containers:
-  - name: "nomic-embed-text-v1.5"
-    image: ""
-    args: [
-      "--runtime", "nvidia",
-      "--gpus", "all",
-      "--ipc", "host",
-      "-e", "VLLM_ALLOW_LONG_MAX_MODEL_LEN=1",
-      "vllm/vllm-openai:v0.14.1-cu130@sha256:6fc52be4609fc19b09c163be2556976447cc844b8d0d817f19bc9e1f44b48d5a",
-      "--model", "nomic-ai/nomic-embed-text-v1.5",
-      "--served-model-name", "nomic-embed-text",
-      "--trust-remote-code",
-      "--port", "8001",
-      "--max-model-len", "8192",
-      "--hf-overrides", '''{"max_position_embeddings":8192,"rope_theta":1000,"rope_scaling":{"type":"dynamic","factor":4.0}}'''
-    ]
+docker run -d --gpus all -p 8001:80 \
+  --name tei-nomic-pinned \
+  ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673 \
+  --model-id nomic-ai/nomic-embed-text-v1.5 \
+  --revision e5cf08aadaa33385f5990def41f7a23405aec398 \
+  --served-model-name nomic-embed-text \
+  --max-client-batch-size 64 \
+  --auto-truncate
 
 shim:
   listen-port: 443
