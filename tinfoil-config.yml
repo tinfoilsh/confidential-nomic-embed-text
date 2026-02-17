@@ -9,8 +9,6 @@ containers:
     runtime: nvidia
     gpus: all
     command: [
-      "--runtime", "nvidia",
-      "--gpus", "all",
       "--model-id", "nomic-ai/nomic-embed-text-v1.5",
       "--revision", "e5cf08aadaa33385f5990def41f7a23405aec398",
       "--served-model-name", "nomic-embed-text",
