@@ -1,16 +1,16 @@
-shim-version: v0.3.10@sha256:825cfafbc6dde8967ac60e44264f4686fcf2ed33fae112ab4b1c69c6673cdc8e
-cvm-version: 0.5.23
+shim-version: v0.3.17@sha256:6dff221ec3c4de5c4f44472bc21b47574b7d118902aaa0a55fd367eeaa1f33c5
+cvm-version: 0.6.6
 cpus: 16
 memory: 65536
-gpus: full
 
 containers:
   - name: "nomic-embed-text-v1.5"
-    image: ""
-    args: [
+    image: "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673"
+    runtime: nvidia
+    gpus: all
+    command: [
       "--runtime", "nvidia",
       "--gpus", "all",
-      "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673",
       "--model-id", "nomic-ai/nomic-embed-text-v1.5",
       "--revision", "e5cf08aadaa33385f5990def41f7a23405aec398",
       "--served-model-name", "nomic-embed-text",
