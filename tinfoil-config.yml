@@ -1,11 +1,11 @@
 shim-version: v0.3.18@sha256:7d9f98be78c91ede89f43c948a12d084fae34312effe9395ca7ed572991cb561
-cvm-version: 0.6.6
+cvm-version: 0.6.7
 cpus: 16
 memory: 65536
 
 containers:
   - name: "nomic-embed-text-v1.5"
-    image: "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673"
+    image: "ghcr.io/huggingface/text-embeddings-inference@sha256:cfe2df746169aa1fecaa101d07f0d31ad0388a98e00073007335b342ddb79a43"
     runtime: nvidia
     gpus: all
     command: [
