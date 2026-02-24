@@ -5,7 +5,7 @@ memory: 65536
 
 containers:
   - name: "nomic-embed-text-v1.5"
-    image: "ghcr.io/huggingface/text-embeddings-inference@sha256:cfe2df746169aa1fecaa101d07f0d31ad0388a98e00073007335b342ddb79a43"
+    image: "ghcr.io/huggingface/text-embeddings-inference:100-1.9@sha256:16be3893ada5d7decaa60bb08b5cd021504b783bfd87ab1473ebacae7026add3"
     runtime: nvidia
     gpus: all
     command: [
