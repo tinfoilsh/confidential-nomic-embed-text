@@ -1,6 +1,6 @@
 cvm-version: 0.7.3
 cpus: 16
-gpu: 1
+gpus: 1
 memory: 65536
 
 containers:
