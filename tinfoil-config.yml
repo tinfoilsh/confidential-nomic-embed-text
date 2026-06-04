@@ -1,4 +1,4 @@
-cvm-version: 0.7.3
+cvm-version: 0.10.2
 cpus: 16
 gpus: 1
 memory: 65536
@@ -6,14 +6,20 @@ memory: 65536
 containers:
   - name: "nomic-embed-text-v1.5"
     image: "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673"
+    networks: ["egress"]
     runtime: nvidia
     gpus: all
+    read_only: false
     command: [
       "--model-id", "nomic-ai/nomic-embed-text-v1.5",
       "--revision", "e5cf08aadaa33385f5990def41f7a23405aec398",
       "--served-model-name", "nomic-embed-text",
       "--port", "8001",
     ]
+
+networks:
+  egress:
+    egress: open
 
 shim:
   upstream-port: 8001
