@@ -30,6 +30,7 @@ shim:
   authenticated: true
   authenticated-endpoints:
     - /v1/embeddings
+    - /metrics
   paths:
     - /v1/embeddings
     - /metrics
