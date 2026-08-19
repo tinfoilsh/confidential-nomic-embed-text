@@ -10,11 +10,12 @@ models:
 
 containers:
   - name: "nomic-embed-text-v1.5"
+    models: ["nomic-embed-text-v1.5"]
     image: "ghcr.io/huggingface/text-embeddings-inference@sha256:346a39baecdd03c40e77184c66a4a9931ec2e25b8e57ff3766b79affdbd38673"
     runtime: nvidia
     gpus: all
     restart: always
-    command: ["--model-id", "/tinfoil/mpk/mpk-868790ff0e4820086091a6a63097f194a0a17bc431dd616538eb7881ecdbd935", "--served-model-name",
+    command: ["--model-id", "/tinfoil/models/nomic-embed-text-v1.5", "--served-model-name",
       "nomic-embed-text", "--port", "8001"]
     tmpfs:
       /tmp: size=512m,mode=1777,exec
